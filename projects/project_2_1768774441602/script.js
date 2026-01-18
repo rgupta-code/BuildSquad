@@ -1,0 +1,1 @@
+console.log("Welcome to Create a new website for a Candy shop");
