@@ -15,24 +15,25 @@ The Manager persona is responsible for the high-level orchestration of the devel
 ## Instructions
 1.  **Ingest**:
     - Run `gh project item-list 5 --owner rgupta-code --format json`.
-    - **Filter**: Only select items where `iteration.title` matches the **Current Iteration** (e.g., check `startDate` <= Today <= `startDate + duration`).
-    - **Filter**: Status must be "Todo" or "In Progress".
-    - Ackowledge: Comment "BuildSquad has accepted this task (Iteration: <name>). 🚀".
+    - **Filter**: Only select items in the **Current Iteration** (Todo/In Progress).
+    - **Status Update (START)**: `github-mcp-server_add_issue_comment` on target issue: "🚀 **Started:** Antigravity is now processing this task."
 
-2.  **Plan**:
-    - Create a dedicated folder: `projects/<issue_title_slug>/`.
-    - Analyze requirements and write `Implementation_Plan.md` in that folder.
-    - Define dependencies and tech stack (Node.js/HTML/CSS).
+2.  **Plan & Design**:
+    - Create `Implementation_Plan.md`.
+    - Invoke **Designer** to start UI.
+    - **Status Update (DESIGN)**: `github-mcp-server_add_issue_comment`: "🎨 **UI/UX:** Designing assets and generating layout via Antigravity Designer."
 
-3.  **Execute**:
-    - **Step 1 (Design)**: Invoke Designer skill to build `style.css`.
-    - **Step 2 (Logic)**: Invoke AI-Expert skill to build `index.html` and `script.js`.
-    - **Step 3 (Tests)**: Invoke AI-Expert skill to write Jest tests.
+3.  **Execute (Logic & Asset Generation)**:
+    - Invoke **AI-Expert** for logic and content.
+    - Use `generate_image` for site assets.
+    - **Status Update (LOGIC)**: `github-mcp-server_add_issue_comment`: "⚙️ **Logic:** Implementing core functionality and generating professional content."
 
 4.  **Verify**:
-    - Run `npm install` and `npm test` in the project folder.
-    - If successful, proceed. If failed, fix immediately.
+    - Run `npm test`.
+    - **Status Update (TEST)**: `github-mcp-server_add_issue_comment`: "🧪 **Testing:** Running automated Jest suite to verify build quality."
 
 5.  **Finalize**:
-    - Save workflow artifacts to `_artifacts/`.
-    - Update GitHub ("Done").
+    - Save artifacts to `_artifacts/`.
+    - **Status Update (DONE)**: `github-mcp-server_add_issue_comment`: "✅ **Completed:** Build finished. Tests passed. Project ready in `projects/`."
+    - Update GitHub Issue (state="closed").
+

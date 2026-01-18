@@ -1,0 +1,11 @@
+PASS  __tests__/site.test.js
+  Candy Shop Website
+    √ Hero section exists with correct title (36 ms)
+    √ Product grid has 6 items (14 ms)
+    √ Shop Now button scrolls to shop (11 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       3 passed, 3 total
+Snapshots:   0 total
+Time:        2.706 s
+Ran all test suites.

@@ -11,16 +11,21 @@
 - **FORBIDDEN**: 
     - **PYTHON IS STRICTLY PROHIBITED**. Do not use python, pip, venv, conda, or requirements.txt.
     - Do not suggest or install any Python-based libraries (e.g., requests, pandas, flask).
-- **Frontend**: HTML5, Vanilla CSS (CSS Variables), JavaScript. React only if "complex" requested.
+- **Frontend**: Primarily **HTML5, Vanilla CSS (Modern), and Vanilla JavaScript**.
+    - Goal: "Beautiful and Modern" look.
+    - Leverage CSS Variables, Flexbox/Grid, and modern typography.
+- **Dynamic Systems**: Use **Node.js (Express) or React** ONLY if the site requires dynamic features like a Database connection, Auth, or complex state management.
 - **Testing**: Jest or Vitest. Must include unit tests for all logic.
 
 ## 3. GitHub Integration (MCP)
-- **Source of Truth**: Use `github-mcp-server` tools to fetch issues, post comments, and manage PRs.
-- **No Hallucinations**: Do not guess Issue IDs or Repo names. List them first.
-- **Updates**: Update the Issue status (via comments or labels) as the workflow progresses.
-    - Start: "🚀 Development Started"
-    - Review: "👀 Ready for Review"
-    - Complete: "✅ Deployed"
+- **Source of Truth**: Use `github-mcp-server` tools or `gh` CLI.
+- **Progress Tracking**: You MUST update the GitHub Issue status using comments at every major stage (Start, Design, Logic, Test, Complete).
+- **Communication**: Use emojis and clear status messages as defined in the Manager skill.
+
+## 4. Visuals & Assets
+- **Images**: Use the `generate_image` tool for all site assets. No generic placeholders.
+- **Icons**: Use **FontAwesome** or **Lucide** for iconography.
+- **Aesthetics**: Premium, modern, and high-impact.
 
 ## 4. Artifact Management
 - **Persistence**: Every workflow run must produce an artifact in `_artifacts/<timestamp>_<project>/`.
